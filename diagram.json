@@ -1,0 +1,79 @@
+{
+  "version": 1,
+  "author": "Skander Gritli",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": 105.6, "left": -62.36, "attrs": {} },
+    {
+      "type": "wokwi-membrane-keypad",
+      "id": "keypad1",
+      "top": -251.6,
+      "left": 111.2,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-buzzer",
+      "id": "bz1",
+      "top": -45.6,
+      "left": 529.8,
+      "attrs": { "volume": "0.1" }
+    },
+    {
+      "type": "wokwi-pir-motion-sensor",
+      "id": "pir1",
+      "top": 272.8,
+      "left": -362.58,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 359.15,
+      "left": 326.4,
+      "attrs": { "value": "1000" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": 265.2,
+      "left": 666.2,
+      "attrs": { "color": "red" }
+    },
+    {
+      "type": "wokwi-lcd1602",
+      "id": "lcd1",
+      "top": -243.2,
+      "left": -311.2,
+      "attrs": { "pins": "i2c" }
+    },
+    { "type": "wokwi-servo", "id": "servo1", "top": 439.6, "left": 163.2, "attrs": {} }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "keypad1:R1", "esp:23", "green", [ "v57.6", "h-172.8" ] ],
+    [ "keypad1:R4", "esp:19", "green", [ "v0" ] ],
+    [ "keypad1:C1", "esp:18", "green", [ "v0" ] ],
+    [ "keypad1:C2", "esp:5", "green", [ "v0" ] ],
+    [ "keypad1:C3", "esp:17", "green", [ "v0" ] ],
+    [ "keypad1:C4", "esp:16", "green", [ "v0" ] ],
+    [ "bz1:1", "esp:GND.3", "green", [ "v57.6", "h-537.6" ] ],
+    [ "bz1:2", "esp:4", "green", [ "v0" ] ],
+    [ "pir1:VCC", "esp:3V3", "red", [ "v0" ] ],
+    [ "pir1:GND", "esp:GND.1", "black", [ "v163.2", "h239.74" ] ],
+    [ "pir1:OUT", "esp:27", "green", [ "v86.4", "h153.46", "v38.4" ] ],
+    [ "led1:C", "esp:GND.2", "green", [ "v-182.4", "h-537.2" ] ],
+    [ "led1:A", "r1:2", "green", [ "v0" ] ],
+    [ "r1:1", "esp:15", "green", [ "v0" ] ],
+    [ "lcd1:VCC", "esp:3V3", "red", [ "h-28.8", "v9.7" ] ],
+    [ "lcd1:GND", "esp:GND.1", "black", [ "h-57.6", "v384" ] ],
+    [ "esp:0", "keypad1:R3", "green", [ "h0" ] ],
+    [ "esp:2", "keypad1:R2", "green", [ "h0" ] ],
+    [ "lcd1:SDA", "esp:21", "green", [ "h-19.2", "v249.8", "h499.2", "v105.6" ] ],
+    [ "lcd1:SCL", "esp:22", "green", [ "h-19.2", "v240.3", "h470.4", "v105.6" ] ],
+    [ "servo1:GND", "esp:GND.2", "black", [ "h-67.2", "v-76.8" ] ],
+    [ "servo1:V+", "esp:3V3", "green", [ "h-288", "v-364.7" ] ],
+    [ "servo1:PWM", "esp:25", "green", [ "h-268.8", "v-316.6" ] ]
+  ],
+  "dependencies": {}
+}
