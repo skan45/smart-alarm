@@ -49,7 +49,7 @@ void connectToWiFi() {
    LCD.clear();
    LCD.setCursor(0,0);
    LCD.print("Wi-Fi connected sucessufully");
-   delay(1000);
+   delay(5000);
 }
 void setup() {
   Serial.begin(9600);
