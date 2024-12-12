@@ -48,7 +48,7 @@ void connectToWiFi() {
    LCD.println("");
    LCD.clear();
    LCD.setCursor(0,0);
-   LCD.print("Wi-Fi connected");
+   LCD.print("Wi-Fi connected sucessufully");
    delay(1000);
 }
 void setup() {
